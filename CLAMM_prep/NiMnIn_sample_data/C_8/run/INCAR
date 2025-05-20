@@ -1,0 +1,15 @@
+System = Testrun for NiMnIn
+ISTART = 0 ; ICHARG=2
+ENCUT  = 550
+EDIFF = 0.00001
+EDIFFG = -0.01 
+IBRION = 2
+NSW = 1000 
+ISMEAR = 0; SIGMA = 0.02
+ISIF=2
+LREAL = Auto
+ALGO=F
+LWAVE = .FALSE.
+ISPIN = 2
+MAGMOM = .1 .1 .1 .1 .1 .1 .1 .1 -4 -4 4 4 4 -4 0 0
+LORBIT = 11
