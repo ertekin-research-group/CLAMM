@@ -1,7 +1,7 @@
-# GenMC_Fit ReadMe
+# CLAMM_Fit ReadMe
 
 ## Overview
-GenMC_Fit is the second component of the GenMC-MA toolkit, designed to parameterize lattice models from density functional theory (DFT) datasets. It operates as part of the broader GenMC-MA workflow, which is used to model the thermodynamic, magnetic, and structural properties of magnetic alloys and compounds. This tool specifically takes DFT-derived datasets and calculates effective cluster interaction (ECI) terms or other model parameters through a regression approach. These parameters are then used to predict material properties and support Monte Carlo simulations.
+CLAMM_Fit is the second component of the GenMC-MA toolkit, designed to parameterize lattice models from density functional theory (DFT) datasets. It operates as part of the broader GenMC-MA workflow, which is used to model the thermodynamic, magnetic, and structural properties of magnetic alloys and compounds. This tool specifically takes DFT-derived datasets and calculates effective cluster interaction (ECI) terms or other model parameters through a regression approach. These parameters are then used to predict material properties and support Monte Carlo simulations.
 
 ---
 
@@ -22,7 +22,7 @@ GenMC_Fit is the second component of the GenMC-MA toolkit, designed to parameter
 ---
 
 ## Installation
-1. Clone the repository containing GenMC_Fit:
+1. Clone the repository containing CLAMM_Fit:
    ```bash
    git clone <repository_url>
    ```
@@ -35,7 +35,7 @@ GenMC_Fit is the second component of the GenMC-MA toolkit, designed to parameter
 
 ## Input Files
 ### 1. **`param_in` File**
-This file defines configuration options for GenMC_Fit. Below is an example structure:
+This file defines configuration options for CLAMM_Fit. Below is an example structure:
 
 ```yaml
 lat_in: 'POSCAR'  # Path to the lattice structure file
@@ -63,7 +63,7 @@ This file defines the motifs and types of clusters to be analyzed. An a simple c
 ```
 
 ### 3. **Defining Clusters**
-Clusters in GenMC_Fit are defined by their geometric motifs and decorations. A motif represents the spatial arrangement of atoms, while a decoration specifies how atomic species are assigned to each position in the motif. For example:
+Clusters in CLAMM_Fit are defined by their geometric motifs and decorations. A motif represents the spatial arrangement of atoms, while a decoration specifies how atomic species are assigned to each position in the motif. For example:
 
 - **Motifs:** These are the unique geometric arrangements of atoms (e.g., a single site, pairs of sites, triangles).
 - **Decorations:** These define the specific atomic species (or spins) assigned to each site in the motif.
@@ -90,12 +90,12 @@ Clusters are specified in the `cluster_in.json` file using the following format:
 
 ---
 
-## Running GenMC_Fit
+## Running CLAMM_Fit
 1. Prepare the required input files (`param_in`, `cluster_in`, etc.).
 2. Run the script using the following command:
 
    ```bash
-   python main.py
+   python fit_data.py
    ```
 
 3. The script performs two main tasks depending on the `param_in` settings:
@@ -106,7 +106,7 @@ Clusters are specified in the `cluster_in.json` file using the following format:
 
 ## Outputs
 1. **`CLUSTERS` File**: Contains the parameterized lattice model.
-2. **Cluster Counts**: Written to `count_out` if `do_count` is enabled. Counting clusters for each DFT simulation is the most time consuming step in GenMC_Fit. The `count_out` file saves a version of counted clusters for each simulation which can be loaded when trying diffrent regression methods on the same set of clusters. It is highly recomended to 
+2. **Cluster Counts**: Written to `count_out` if `do_count` is enabled. Counting clusters for each DFT simulation is the most time consuming step in CLAMM_Fit. The `count_out` file saves a version of counted clusters for each simulation which can be loaded when trying diffrent regression methods on the same set of clusters. It is highly recomended to 
 
 ---
 
@@ -136,7 +136,7 @@ convergence: 1e-5                       # tolerance for the coefficient optimiza
 ```
 Run the script:
 ```bash
-python main.py
+python fit_data.py
 ```
 Output: `count_out` (contains computed cluster counts).
 
@@ -166,7 +166,7 @@ convergence: 1e-5                       # tolerance for the coefficient optimiza
 ```
 Run the script:
 ```bash
-python main.py
+python fit_data.py
 ```
 Output: `eci_out` (contains fitted parameters).
 ---
