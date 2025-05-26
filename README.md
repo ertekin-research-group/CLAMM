@@ -5,7 +5,11 @@ A Cluster Expansion and Monte Carlo toolkit for Alloys and Magnetic Materials
 CLAMM 
 
 
+## 🤝 Contributions
 
+We welcome contributions! If you would like to add new algorithms, improve performance, or extend CLAMM's functionality, feel free to fork this repository and submit a pull request.
+
+---
 ## License
 
 This project is licensed under the MIT License.
