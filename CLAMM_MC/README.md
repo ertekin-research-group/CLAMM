@@ -138,28 +138,3 @@ The code will output:
 
 ---
 
-## 📚 Citation
-
-If you use CLAMM_MC or the CLAMM toolkit in your research, please cite:
-
-> Brian J. Blankenau, Tianyu Su, Namhoon Kim, Elif Ertekin, "CLAMM: a generalized spin cluster expansion–Monte Carlo toolkit for Alloys and Magnetic Materials", *Computer Physics Communications*, 2025.
-
----
-
-## 📜 License
-
-CLAMM_MC is licensed under the MIT License. See `LICENSE` for details.
-
----
-
-## 🤝 Contributions
-
-We welcome contributions! If you would like to add new algorithms, improve performance, or extend CLAMM_MC's functionality, feel free to fork this repository and submit a pull request.
-
----
-
-## 🔗 Project Homepage
-
-The full CLAMM toolkit (Prep, Fit, MC) and latest tutorials are hosted on:
-
-**[https://github.com/ertekin-research-group/clamm](https://github.com/ertekin-research-group/clamm)**
