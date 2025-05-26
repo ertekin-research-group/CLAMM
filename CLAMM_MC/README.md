@@ -91,6 +91,38 @@ TEMP_STEP = 40
 USE_STATES = TRUE
 WRITE_CONTCARS = FALSE
 ```
+The effect of each of these input flaggs are shown below:
+
+| Line | Flag | Purpose |
+|------|------|---------|
+| 1 | `ALGO = 3` | Selects the simulation algorithm:<br>- `3` enables a full Monte Carlo simulation allowing **both atomic and magnetic configurations** to change. |
+| 2 | `STRUCTURE = POSCAR` | Specifies the filename for the unit cell or initial configuration. Must be a modified VASP-style `POSCAR`. |
+| 3 | `USE_POSCAR = TRUE` | Indicates that the program should use the `POSCAR` file as input (as opposed to generating one). |
+| 4 | `SHAPE = 2 2 2` | Sets the demensions in x, y, z to build a **supercell** from the unit cell (e.g., 2×2×2). |
+| 5 | `ATOM_NUMBS = 1728 864 864` | Target **number of atoms of each species** in the supercell, matching order in `SPECIES`. |
+| 6 | `SPECIES = Ni Mn In` | Lists the **chemical elements** (species) used in the simulation. Order matters and must match POSCAR. |
+| 7 | `SIM_TYPE = DEFAULT` | Placeholder for selecting simulation type (currently always set to `DEFAULT`; may allow future extensions). |
+| 8 | `SPIN_INIT = FM` | Sets the **initial magnetic configuration**:<br>- `FM`: Ferromagnetic (all spins aligned)<br>- `AFM`: Antiferromagnetic<br>- `RAND`: Random spins |
+| 9 | `TA_PASSES = 100` | Number of **thermalization (equilibration)** passes performed before measuring observables. |
+| 10 | `EQ_PASSES = 300` | Number of **passes used to average physical quantities** (after thermalization). |
+| 11 | `START_TEMP = 4000` | Starting **temperature** for simulated annealing (in K or arbitrary units). |
+| 12 | `END_TEMP = 0` | Ending **temperature** for simulated annealing. |
+| 13 | `TEMP_STEP = 40` | **Temperature step** size for simulated annealing. |
+| 14 | `SRO_TARGET = 1.0` | (Only used when `ALGO = -1`) Target value for **short-range order** parameter (Warren-Cowley). |
+| 15 | `USE_STATES = TRUE` | If `TRUE`, spins are **restricted to user-defined allowed values** (e.g., from `SPIN_STATES` file). |
+| 16 | `WRITE_CONTCARS = FALSE` | If `TRUE`, will output **CONTCAR-style snapshots** after each temperature step. If `FALSE`, only the final state is saved. |
+
+Options for the ALGO Flag:
+| ALGO | Description |
+|------|-------------|
+| -2   | SRO generation with 3-body Ising support |
+| -1   | Targeted short-range order (SRO) generation |
+| 0    | Evaluate Hamiltonian only |
+| 1    | Magnetic degrees of freedom only |
+| 2    | Atomic degrees of freedom only |
+| 3    | Magnetic + atomic degrees of freedom |
+| 4    | Magnetic + atomic with vacancies/interstitials |
+
 
 ### Step 3: Provide SPIN_STATES
 ```text
@@ -107,20 +139,6 @@ WRITE_CONTCARS = FALSE
 The code will output:
 - `OUTPUT` — thermodynamic data (energy, magnetization, heat capacity, etc.)
 - (optional) `CONTCAR_xxx` files if enabled
-
----
-
-## 🧠 Algorithms (ALGO Flag)
-
-| ALGO | Description |
-|------|-------------|
-| -2   | SRO generation with 3-body Ising support |
-| -1   | Targeted short-range order (SRO) generation |
-| 0    | Evaluate Hamiltonian only |
-| 1    | Magnetic degrees of freedom only |
-| 2    | Atomic degrees of freedom only |
-| 3    | Magnetic + atomic degrees of freedom |
-| 4    | Magnetic + atomic with vacancies/interstitials |
 
 ---
 
