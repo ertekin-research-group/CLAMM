@@ -1,7 +1,7 @@
 # CLAMM_Fit
 
 ## Overview
-CLAMM_Fit is the second component of the GenMC-MA toolkit, designed to parameterize lattice models from density functional theory (DFT) datasets. It operates as part of the broader GenMC-MA workflow, which is used to model the thermodynamic, magnetic, and structural properties of magnetic alloys and compounds. This tool specifically takes DFT-derived datasets and calculates effective cluster interaction (ECI) terms or other model parameters through a regression approach. These parameters are then used to predict material properties and support Monte Carlo simulations.
+CLAMM_Fit is the second component of the CLAMM toolkit, designed to parameterize lattice models from density functional theory (DFT) datasets. It operates as part of the broader CLAMM workflow, which is used to model the thermodynamic, magnetic, and structural properties of magnetic alloys and compounds. This tool specifically takes DFT-derived datasets and calculates effective cluster interaction (ECI) terms or other model parameters through a regression approach. These parameters are then used to predict material properties and support Monte Carlo simulations.
 
 ---
 

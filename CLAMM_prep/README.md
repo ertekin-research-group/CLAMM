@@ -1,7 +1,9 @@
 # CLAMM_Prep
 
-CLAMM_Prep is a component of the Generalized Monte Carlo Toolkit for Magnetic Alloys (GenMC-MA). It is a Python-based preprocessing tool that facilitates the construction of lattice models by collating, verifying, and formatting data generated from DFT (Density Functional Theory) simulations. The processed data can then be used to parameterize models for simulating magnetic and alloy configurations. Currently, CLAMM_Prep only supports VASP input files for the DFT dataset.
+CLAMM_Prep is a component of the Cluster Expansion and Monte Carlo toolkit for Alloys and Magnetic Materials (CLAMM). CLAMM_Prep is a Python-based preprocessing tool that facilitates the construction of lattice models by collating, verifying, and formatting data generated from DFT (Density Functional Theory) simulations. The processed data can then be used to parameterize models for simulating magnetic and alloy configurations. Currently, CLAMM_Prep only supports VASP input files for the DFT dataset.
 
+---
+## Instalation 
 ---
 
 ## Features
@@ -17,7 +19,7 @@ CLAMM_Prep is a component of the Generalized Monte Carlo Toolkit for Magnetic Al
 
 The general workflow for using CLAMM_Prep involves the following steps:
 1. Create a dataset from DFT simulations. 
-    - Any model created with GenMC-MA is only as good as its dataset. In order to ensure the best possible mode, the dataset should include a diverse set of atomic and magnetic configurations. It is recommended that, for each unique POSCAR file in a dataset should be initialized with as many symmetrically unique configurations of magnetic moments as is practical.
+    - Any model created with CLAMM is only as good as its dataset. In order to ensure the best possible mode, the dataset should include a diverse set of atomic and magnetic configurations. It is recommended that, for each unique POSCAR file in a dataset should be initialized with as many symmetrically unique configurations of magnetic moments as is practical.
 
     - The directory structure of the dataset should be organized as follows:
 ```plaintext
@@ -73,7 +75,7 @@ The general workflow for using CLAMM_Prep involves the following steps:
      It is important to carefully choose the "spin_tol" values in order to achieve a suitable model. If the "do_mag_distrib" flag is set to "True", CLAMM_Prep will return the magnetic moments of each atom organized by atomic species. This data can be plotted as a histogram to view the distribution of magnetic moments. It is recommended that the chosen tolerance vector reflect the moment distribution in order to achieve the best model.
      
 
-3. Run the CLAMM_Prep Python script. This will creat a dataset file at the user defined location in a format that is readable by GenMC_Fit, the next tool in the GenMC-MA workflow. The dataset file should look something like this:
+3. Run the CLAMM_Prep Python script. This will creat a dataset file at the user defined location in a format that is readable by GenMC_Fit, the next tool in the CLAMM workflow. The dataset file should look something like this:
 
 		# Ni Mn In
 		8 4 4 \Ni2MnIn\Mart\B0 -88.5581 5.2 5.2 7.8 1.5708 1.5708 1.5708
