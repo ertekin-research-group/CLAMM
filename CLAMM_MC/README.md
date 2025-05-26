@@ -87,12 +87,3 @@ WRITE_CONTCARS = FALSE
 
 Refer to the [CLAMM Documentation](https://github.com/ertekin-research-group/xxx) for more examples and detailed parameter descriptions.
 
-## License
-
-This project is licensed under the MIT License.
-
-## Citation
-
-If you use CLAMM in your work, please cite:
-
-> Blankenau, B.J., Su, T., Kim, N., Ertekin, E. (2025). *CLAMM: A generalized spin cluster expansion–Monte Carlo toolkit for Alloys and Magnetic Materials.* Computer Physics Communications (in review).
