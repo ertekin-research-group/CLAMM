@@ -16,7 +16,8 @@ To compile and run `CLAMM_MC`, you need:
 
 - C++ compiler with C++11 or later support
 - CMake ≥ 3.10
-- A Linux system (tested on Ubuntu)
+ 
+CLAMM_MC has been tested on Mac Linux and Windows.
 
 ### Build Steps
 Assuming you have already cloned the main CLAMM repository, navigate the CLAMM_MC folder and create a build directory:
