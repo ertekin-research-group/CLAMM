@@ -22,11 +22,11 @@ CLAMM_Fit is the second component of the CLAMM toolkit, designed to parameterize
 ---
 
 ## Installation
-1. Clone the repository containing CLAMM_Fit:
+1. If you have not already colned the CLAMM repository do so with:
    ```bash
    git clone <repository_url>
    ```
-2. Install required Python dependencies:
+2. Next, install any required Python dependencies not already installed using pip. For example:
    ```bash
    pip install numpy pymatgen yaml
    ```
