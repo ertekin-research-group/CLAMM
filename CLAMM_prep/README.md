@@ -2,7 +2,13 @@
 
 CLAMM_Prep is a component of the Cluster Expansion and Monte Carlo toolkit for Alloys and Magnetic Materials (CLAMM). CLAMM_Prep is a Python-based preprocessing tool that facilitates the construction of lattice models by collating, verifying, and formatting data generated from DFT (Density Functional Theory) simulations. The processed data can then be used to parameterize models for simulating magnetic and alloy configurations. Currently, CLAMM_Prep only supports VASP input files for the DFT dataset.
 
+This package is part of the larger CLAMM framework:
+- `CLAMM_Prep` (Python): Prepares DFT simulation data
+- `CLAMM_Fit` (Python): Fits lattice and spin-lattice models
+- `CLAMM_MC` (C++): Runs Monte Carlo simulations on fitted models
+
 ---
+
 ## Instalation 
 ---
 
