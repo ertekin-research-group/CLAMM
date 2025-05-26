@@ -19,21 +19,20 @@ To compile and run `CLAMM_MC`, you need:
 - A Linux system (tested on Ubuntu)
 
 ### Build Steps
-
-```bash
-# Clone this repository or unpack the source code
-cd CLAMM_MC
-
+Assuming you have already cloned the main CLAMM repository, navigate the CLAMM_MC folder and create a build directory:
+```
+cd ./CLAMM_MC
 # Create a build directory
 mkdir build && cd build
-
-# Configure the project using CMake
-cmake ..
-
-# Compile the code
-make
 ```
-
+Inside the build directory  configure the project using cmake:
+```
+cmake ..
+```
+And build it with:
+```
+cmake --build .
+```
 The executable `CLAMM_MC` will be generated in the `build` directory.
 
 ---
