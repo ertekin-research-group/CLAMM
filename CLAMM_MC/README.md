@@ -58,8 +58,10 @@ Make sure the required input files are in the same directory or modify the `INPU
 ---
 
 ## 🧪 Tutorial Example
-
-### Step 1: Prepare Your POSCAR
+### Step 1: Input File Prep
+Prepaire all input files. Example input files are included in the Sample_Input folder.
+### Prepare Your POSCAR
+CLAMM_MC uses a POSCAR-like file to define the simulation cell. The only differnece between CLAMM and VASP POSCAR files lies in the implementation of sub-lattice information. In order to define any sub-lattices CLAMM_MC requires that each set of atomic coordinates is followed by the atomic spieces that are allowed to occupy that, or an equivilant site.
 ```text
 Ni2MnIn
 1.0
@@ -74,7 +76,8 @@ Direct
 0.50 0.50 0.50 Mn In
 ```
 
-### Step 2: Write an INPUT File
+### Write an INPUT File
+The INPUT file is where the user defines all simulation specific paramiters. An example INPUT file is shown below:
 ```text
 ALGO = 3
 STRUCTURE = POSCAR
@@ -92,7 +95,7 @@ TEMP_STEP = 40
 USE_STATES = TRUE
 WRITE_CONTCARS = FALSE
 ```
-The effect of each of these input flaggs are shown below:
+The effect of each of these lines is shown in the following table:
 
 | Line | Flag | Purpose |
 |------|------|---------|
@@ -125,19 +128,20 @@ Options for the ALGO Flag:
 | 4    | Magnetic + atomic with vacancies/interstitials |
 
 
-### Step 3: Provide SPIN_STATES
+### Provide SPIN_STATES
 ```text
 -1 0 1
 -1 0 1
 0
 ```
 
-### Step 4: Run the Simulation
+### Step 2: Run the Simulation
+Yep. Just two steps. Its just that easy. Run the simulation with:
 ```bash
 ./CLAMM_MC
 ```
 
-The code will output:
+The as the simulation runs, it will create the following output files:
 - `OUTPUT` — thermodynamic data (energy, magnetization, heat capacity, etc.)
 - (optional) `CONTCAR_xxx` files if enabled
 
@@ -145,15 +149,15 @@ The code will output:
 
 ## 📁 File Summary
 
-| File         | Purpose                                      |
-|--------------|----------------------------------------------|
-| `POSCAR`     | Lattice structure and sublattice constraints |
-| `INPUT`      | Main simulation parameters                   |
-| `CLUSTERS`   | Fitted cluster model parameters              |
-| `SPIN_STATES`| Allowed spin states per element              |
-| `OUTPUT`     | Simulation thermodynamic results             |
-| `OUTPUT_SRO` | Short-range order parameter results (optional)|
-| `CONTCAR_*`  | Snapshot of simulation configurations         |
+| File         | Purpose                                                           |
+|--------------|-------------------------------------------------------------------|
+| `POSCAR`     | Lattice structure and sublattice constraints                      |
+| `INPUT`      | Main simulation parameters                                        |
+| `CLUSTERS`   | Fitted cluster model parameters                                   |
+| `SPIN_STATES`| Allowed spin states per element                                   |
+| `OUTPUT`     | Simulation order paramiters and thermodynamic results             |
+| `OUTPUT_SRO` | Short-range order parameter results (optional)                    |
+| `CONTCAR_*`  | Snapshot of simulation configurations                             |
 
 ---
 

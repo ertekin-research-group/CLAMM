@@ -6,17 +6,14 @@
 - **CLAMM Prep** – Python tool for converting VASP-based DFT data into a compact model-ready format.
 - **CLAMM Fit** – Python tool for parameterizing cluster expansion and spin-lattice models.
 - **CLAMM MC** – C++ Monte Carlo engine for performing simulations with the parametrized models.
-
 ---
-
-## 🌐 Overview
-
-CLAMM allows researchers to:
-- Generate special quasi-random structures (SQS)
-- Explore short-range and long-range ordering
-- Predict magnetic and phase transitions
-- Simulate alloy stability across temperature and composition
-
+  
+## Key Features
+- **Cluster expansion** and **spin-lattice models** for configurational and magnetic modeling.
+- Support for **multi-sublattice systems** and **user-defined motifs**.
+- Generation of **special quasi-random structures (SQS)** and **configurations with target short-range order (SRO)**.
+- Monte Carlo algorithms with flexible temperature schedules and spin/atomic configuration support.
+- Interpretable models using the **decorated cluster expansion (DCE)** formalism.
 ---
 
 ## 📦 Project Structure
@@ -34,29 +31,20 @@ In addition to the code, each folder contains all sample files needed for runnin
 ## 🔧 Installation Instructions
 
 ### Python Tools (Prep and Fit)
-
+To install all python dependencies, navigate to the main CLAMM directory and run:
 ```bash
-cd prep
-pip install -r requirements.txt
-
-cd ../fit
 pip install -r requirements.txt
 ```
 
-Requirements include:
-- `numpy`, `pymatgen`, `scikit-learn`, `spglib`
-
 ### C++ Tool (CLAMM_MC)
-
+To build the c++ code nessisary to perform Monte Carlo simulations, navigate to the main CLAMM directory and run: 
 ```bash
-cd mc
+cd CLAMM_MC
 mkdir build && cd build
 cmake ..
 make
 ```
-
-Generates `CLAMM_MC` executable in the `build` directory.
-
+This will generates a `CLAMM_MC` executable in the `build` directory.
 ---
 
 ## 🚀 Example Workflow
@@ -64,21 +52,18 @@ Generates `CLAMM_MC` executable in the `build` directory.
 ### 1. Prepare DFT Data
 Use `CLAMM Prep` to collate VASP simulation data:
 ```bash
-python clamm_prep.py param_in.yaml
+python clamm_prep.py
 ```
-
 ### 2. Fit a Model
 Use `CLAMM Fit` to parameterize cluster models:
 ```bash
-python clamm_fit.py param_in.yaml
+python clamm_fit.py
 ```
-
 ### 3. Run Monte Carlo
 Use `CLAMM_MC` to simulate behavior at different temperatures:
 ```bash
 ./CLAMM_MC
 ```
-
 ---
 
 ## 🤝 Contributions
@@ -90,10 +75,10 @@ We welcome contributions! If you would like to add new algorithms, improve perfo
 ## 📘 Documentation
 
 Each module has detailed documentation and examples:
-- `prep/README.md` – DFT data parsing and formatting
-- `fit/README.md` – Model definition and fitting
-- `mc/README.md` – Monte Carlo flags and usage
-
+- `CLAMM_Prep/README.md` – DFT data parsing and formatting
+- `CLAMM_Fit/README.md` – Model definition and fitting
+- `CLAMM_MC/README.md` – Lattice Model initalization and Monte Carlo simulation
+A detailed explenation of all CLAMM tools can be found at ... (the link to the paper when published)
 ---
 
 ## 🔗 Repository
