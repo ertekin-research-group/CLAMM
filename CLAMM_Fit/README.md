@@ -9,7 +9,7 @@ CLAMM_Fit is the second component of the CLAMM toolkit, designed to parameterize
 - Parameterizes lattice models, including cluster expansions, Ising models, and Potts models (More to come).
 - Supports multiple linear regression techniques: Ridge, Lasso, Least Squares, and Elastic Net (More to come).
 - Handles symmetry-based clustering and decorations for complex lattice systems.
-- Outputs parameterized models for use with GenMC_Run.
+- Outputs parameterized models for use with CLAMM_MC.
 
 ---
 
