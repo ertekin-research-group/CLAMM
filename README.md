@@ -1,13 +1,5 @@
 ![title](media/Clamm1.png)
-# Wellcome to CLAMM
-A Cluster Expansion and Monte Carlo toolkit for Alloys and Magnetic Materials 
-
-CLAMM consists of three main tools:
-- `CLAMM_Prep` (Python): Prepares DFT simulation data
-- `CLAMM_Fit` (Python): Fits lattice and spin-lattice models
-- `CLAMM_MC` (C++): Runs Monte Carlo simulations on fitted models
-
-
+# Wellcome to CLAMM: A Cluster Expansion and Monte Carlo toolkit for Alloys and Magnetic Materials 
 
 **CLAMM** is an open-source software suite for simulating thermodynamic, magnetic, and structural properties of complex alloys and magnetic materials using lattice models informed by DFT data. It provides tools for data preparation, model fitting, and Monte Carlo simulation through its three main components:
 
