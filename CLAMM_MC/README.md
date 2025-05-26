@@ -40,7 +40,7 @@ The executable `CLAMM_MC` will be generated in the `build` directory.
 ## 🚀 Usage
 
 ### Required Files
-To run a simulation with CLAMM_MC, you need:
+To run a simulation with CLAMM_MC, you need the folloing input files:
 
 1. `POSCAR` — Defines the unit or supercell geometry and sublattice constraints
 2. `INPUT` — Parameter file specifying the simulation type and conditions
@@ -53,7 +53,7 @@ To run a simulation with CLAMM_MC, you need:
 ./CLAMM_MC
 ```
 
-Make sure the required input files are in the same directory or modify the code to provide full paths.
+Make sure the required input files are in the same directory or modify the `INPUT` file to provide the full paths.
 
 ---
 
