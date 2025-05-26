@@ -48,11 +48,10 @@ To run a simulation with CLAMM_MC, you need the folloing input files:
 4. (Optional) `SPIN_STATES`, `SRO_DEFINITION`, etc., depending on your simulation
 
 ### Example Run
-
+Once the nessisary input files are supplied simply run:
 ```bash
 ./CLAMM_MC
 ```
-
 Make sure the required input files are in the same directory or modify the `INPUT` file to provide the full paths.
 
 ---
