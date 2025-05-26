@@ -58,8 +58,10 @@ Make sure the required input files are in the same directory or modify the `INPU
 ---
 
 ## 🧪 Tutorial Example
-
-### Step 1: Prepare Your POSCAR
+### Step 1: Input File Prep
+Prepaire all input files. Example input files are included in the Sample_Input folder.
+#### Prepare Your POSCAR
+CLAMM_MC uses a POSCAR-like file to define the simulation cell. The only differnece between CLAMM and VASP POSCAR files lies in the implementation of sub-lattice information. In order to define any sub-lattices CLAMM_MC requires that each set of atomic coordinates is followed by the atomic spieces that are allowed to occupy that, or an equivilant site.
 ```text
 Ni2MnIn
 1.0
@@ -75,6 +77,7 @@ Direct
 ```
 
 ### Step 2: Write an INPUT File
+The INPUT file is where the user defines all simulation specific paramiters. An example INPUT file is shown below:
 ```text
 ALGO = 3
 STRUCTURE = POSCAR
@@ -92,7 +95,7 @@ TEMP_STEP = 40
 USE_STATES = TRUE
 WRITE_CONTCARS = FALSE
 ```
-The effect of each of these input flaggs are shown below:
+The effect of each of these lines is shown in the following table:
 
 | Line | Flag | Purpose |
 |------|------|---------|
