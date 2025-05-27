@@ -79,6 +79,7 @@ Each module has detailed documentation and examples:
 - `CLAMM_Fit/README.md` – Model definition and fitting
 - `CLAMM_MC/README.md` – Lattice Model initalization and Monte Carlo simulation
 A detailed explenation of all CLAMM tools can be found at ... (the link to the paper when published)
+Mention NiFeCr paper and NiMnIn paper
 ---
 
 ## 🔗 Repository
