@@ -3,5 +3,4 @@ matplotlib
 pymatgen
 scikit-learn
 pyyaml
-json
 pandas
