@@ -116,7 +116,11 @@ Clusters are specified in the `cluster_in.json` file using the following format:
 
 ## Example Workflow
 ### Step 1: Cluster Counting
-Update `param_in`:
+First, navigate to the CLAMM_Fit directory:
+```bash
+cd ./CLAMM_Fit
+```
+Then update the `param_in` file as needed. (For this example, no updates are nessisary):
 ```yaml
 # main
 do_count: True                          # define whether to count or not
