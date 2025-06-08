@@ -35,11 +35,11 @@ include_directories(${Boost_INCLUDE_DIRS})
 file(GLOB_RECURSE SOURCES ${CMAKE_SOURCE_DIR}/src/*.cpp)
 
 # Add the executable
-add_executable(GMCMA_Run ${SOURCES})
+add_executable(CLAMM_MC ${SOURCES})
 
 # Link Boost libraries if needed
 if(Boost_FOUND)
-    target_link_libraries(GMCMA_Run ${Boost_LIBRARIES})
+    target_link_libraries(CLAMM_MC ${Boost_LIBRARIES})
 endif()
 
 # Include project headers (if you have a "include" directory for headers)
