@@ -99,7 +99,7 @@ Clusters are specified in the `cluster_in.json` file using the following format:
 2. Run the script using the following command:
 
    ```bash
-   python fit_data.py
+   python CLAMM_Fit.py
    ```
 
 3. The script performs two main tasks depending on the `param_in` settings:
@@ -144,7 +144,7 @@ convergence: 1e-5                       # tolerance for the coefficient optimiza
 ```
 Run the script:
 ```bash
-python fit_data.py
+python CLAMM_Fit.py
 ```
 Output: `count_out` (contains computed cluster counts).
 
@@ -174,7 +174,7 @@ convergence: 1e-5                       # tolerance for the coefficient optimiza
 ```
 Run the script:
 ```bash
-python fit_data.py
+python CLAMM_Fit.py
 ```
 Output: `eci_out` (contains fitted parameters).
 ---
