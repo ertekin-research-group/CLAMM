@@ -1,22 +1,22 @@
 # main
-do_count: True                                   # define whether to count or not
-do_fit: True                                     # define whether to fit or not
-lat_in: 'NiMnIn_Example/POSCAR'                  # name of input lattice file (can be any pymatgen readable format)
-data_file: 'NiMnIn_Example/NiMnIn_dataset'       # name of input structure metadata
-clust_in: 'NiMnIn_Example/cluster_NiMnIn'        # name of input cluster file
-species: ['Ni', 'Mn', 'In']                      # list of input species
-fit_lasso: False                                 # define bootstrap fitting method
+do_count: True                                             # define whether to count or not
+do_fit: True                                               # define whether to fit or not
+lat_in: 'NiMnIn_Example_Materials/POSCAR'                  # name of input lattice file (can be any pymatgen readable format)
+data_file: 'NiMnIn_Example_Materials/NiMnIn_dataset'       # name of input structure metadata
+clust_in: 'NiMnIn_Example_Materials/cluster_NiMnIn'        # name of input cluster file
+species: ['Ni', 'Mn', 'In']                                # list of input species
+fit_lasso: False                                           # define bootstrap fitting method
 fit_ridge: False
 fit_eln: False
-rescale_enrg: False                              # define fitting with rescaled energy or raw energy
-ep_comp: [[1, 0, 0], [0, 1, 0], [0, 0, 1]]       # endpoint compositions in the same sequence of species
-                                                 # number of endpoints = number of species
-ep_enrg: [-8.09002441, -5.46867641, -9.09085382] # endpoint energies
+rescale_enrg: False                                        # define fitting with rescaled energy or raw energy
+ep_comp: [[1, 0, 0], [0, 1, 0], [0, 0, 1]]                 # endpoint compositions in the same sequence of species
+                                                           # number of endpoints = number of species
+ep_enrg: [-8.09002441, -5.46867641, -9.09085382]           # endpoint energies
 
 # fit
-sample_times: 1000                               # bootstrap sampling times
-sample_ratio: 0.8                                # bootstrap sampling size over input data size
-kfold: 10                                        # number of data splitting folds
-alpha_range: [-6, 2]                             # range of alpha (need to test carefully)
-l1_ratio: [.4, .5, .6, .7, .9]                   # range of l1_ratio in ElasticNet (need to test)
-convergence: 1e-5                                # tolerance for the coefficient optimization in Lasso/ElasticNet
+sample_times: 1000                                         # bootstrap sampling times
+sample_ratio: 0.8                                          # bootstrap sampling size over input data size
+kfold: 10                                                  # number of data splitting folds
+alpha_range: [-6, 2]                                       # range of alpha (need to test carefully)
+l1_ratio: [.4, .5, .6, .7, .9]                             # range of l1_ratio in ElasticNet (need to test)
+convergence: 1e-5                                          # tolerance for the coefficient optimization in Lasso/ElasticNet
