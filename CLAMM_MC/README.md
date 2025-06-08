@@ -35,7 +35,12 @@ And build it with:
 ```
 cmake --build .
 ```
-The executable `CLAMM_MC` will be generated in the `build` directory.
+The executable `CLAMM_MC.exe` will be generated in the `CLAMM_MC/bin/Debug` directory.
+For convenience we will copy the .exe to the Sample_Input folder in preperation for running the tutorial:
+```
+cd ../
+cp ./bin/Debug/CLAMM_MC.exe ./Sample_Input
+```
 
 ---
 
