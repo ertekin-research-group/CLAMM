@@ -24,7 +24,8 @@ Assuming you have already cloned the main CLAMM repository, navigate the CLAMM_M
 ```
 cd ./CLAMM_MC
 # Create a build directory
-mkdir build && cd build
+mkdir build
+cd build
 ```
 Inside the build directory  configure the project using cmake:
 ```
