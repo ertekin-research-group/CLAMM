@@ -107,6 +107,13 @@ The general workflow for using CLAMM_Prep involves the following steps:
 
 The first line lists the atomic species present in the dataset in the same order as in the POSCAR files. The second line lists the number of each atom of each species, the file path the data was found at, the DFT total energy in eV, and the lattice constants. The next three lines are the lattice vectors. The remaining lines show the atom index, spin/moment, and fractional coordinates of each atom. 
 
+## Example Files
 Feel Free to try and run CLAMM_Prep on the included sample data for NiMnIn. 
-
-
+Just navigate to the CLAMM_Prep file:
+```bash
+cd ./CLAMM_Prep
+```
+and run:
+```bash
+python CLAMM_Prep.py
+```
