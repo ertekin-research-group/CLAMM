@@ -18,19 +18,33 @@ with open('param_in', 'r') as filehandle:
 #     for k, v in param.items():
 #         if key in k:
 #             print(v)
-do_count = param['do_count']
-do_fit = param['do_fit']
-use_avg = param['use_avg_enrg']
-rescale_enrg = param['rescale_enrg']
-ep_comp = param['ep_comp']
-ep_enrg = param['ep_enrg']
-fit_lasso = param['fit_lasso']
-fit_ridge = param['fit_ridge']
-fit_eln = param['fit_eln']
-lat_in = param['lat_in']
-data_file = param['data_file']
-clust_in = param['clust_in']
-species = param['species']
+do_count = param.get('do_count')
+if do_count is None:
+    do_count = True  # default value
+do_fit = param.get('do_fit')
+if do_fit is None:
+    do_fit = True  # default value
+use_avg = param.get('use_avg_enrg')
+if use_avg is None:
+    use_avg = False  # default value
+rescale_enrg = param.get('rescale_enrg')
+if rescale_enrg is None:
+    rescale_enrg = False  # default value
+ep_comp = param.get('ep_comp')
+ep_enrg = param.get('ep_enrg')
+fit_lasso = param.get('fit_lasso')
+if fit_lasso is None:
+    fit_lasso = False  # default value
+fit_ridge = param.get('fit_ridge')
+if fit_ridge is None:
+    fit_ridge = False  # default value
+fit_eln = param.get('fit_eln')
+if fit_eln is None:
+    fit_eln = False  # default value
+lat_in = param.get('lat_in')
+data_file = param.get('data_file')
+clust_in = param.get('clust_in')
+species = param.get('species')
 
 str_list = parse.parse_str(data_file)
 if use_avg:
