@@ -52,16 +52,19 @@ This will generates a `CLAMM_MC` executable in the `build` directory.
 ### 1. Prepare DFT Data
 Use `CLAMM Prep` to collate VASP simulation data:
 ```bash
-python clamm_prep.py
+cd ./CLAMM_Prep
+python CLAMM_Prep.py
 ```
 ### 2. Fit a Model
 Use `CLAMM Fit` to parameterize cluster models:
 ```bash
-python clamm_fit.py
+cd ./CLAMM_Fit
+python CLAMM_Fit.py
 ```
 ### 3. Run Monte Carlo
 Use `CLAMM_MC` to simulate behavior at different temperatures:
 ```bash
+cd ./CLAMM_MC
 ./CLAMM_MC
 ```
 ---
