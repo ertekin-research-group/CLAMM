@@ -17,17 +17,17 @@ To compile and run `CLAMM_MC`, you need:
 - C++ compiler with C++11 or later support
 - CMake ≥ 3.10
  
-CLAMM_MC has been tested on Mac Linux and Windows.
+CLAMM_MC has been tested on Mac, Linux, and Windows.
 
 ### Build Steps
-Assuming you have already cloned the main CLAMM repository, navigate the CLAMM_MC folder and create a build directory:
+Assuming you have already cloned the main CLAMM repository, navigate to the CLAMM_MC folder and create a build directory:
 ```
 cd ./CLAMM_MC
 # Create a build directory
 mkdir build
 cd build
 ```
-Inside the build directory  configure the project using cmake:
+Inside the build directory,  configure the project using CMake:
 ```
 cmake ..
 ```
@@ -36,10 +36,10 @@ And build it with:
 cmake --build .
 ```
 The executable `CLAMM_MC.exe` will be generated in the `CLAMM_MC/bin/Debug` directory.
-For convenience we will copy the .exe to the Sample_Input folder in preperation for running the tutorial:
+For convenience, we will copy the .exe to the Sample_Input folder in preparation for running the tutorial:
 ```
-cd ../
-cp ./bin/Debug/CLAMM_MC.exe ./Sample_Input
+cd ../Sample_Input
+cp ../bin/CLAMM_MC.exe .
 ```
 
 ---
@@ -47,7 +47,7 @@ cp ./bin/Debug/CLAMM_MC.exe ./Sample_Input
 ## 🚀 Usage
 
 ### Required Files
-To run a simulation with CLAMM_MC, you need the folloing input files:
+To run a simulation with CLAMM_MC, you need the following input files:
 
 1. `POSCAR` — Defines the unit or supercell geometry and sublattice constraints
 2. `INPUT` — Parameter file specifying the simulation type and conditions
@@ -55,7 +55,7 @@ To run a simulation with CLAMM_MC, you need the folloing input files:
 4. (Optional) `SPIN_STATES`, `SRO_DEFINITION`, etc., depending on your simulation
 
 ### Example Run
-Once the nessisary input files are supplied simply run:
+Once the necessary input files are supplied, simply run:
 ```bash
 ./CLAMM_MC
 ```
@@ -65,9 +65,9 @@ Make sure the required input files are in the same directory or modify the `INPU
 
 ## 🧪 Tutorial Example
 ### Step 1: Input File Prep
-Prepaire all input files. Example input files are included in the Sample_Input folder.
+Prepare all input files. Example input files are included in the Sample_Input folder.
 ### Prepare Your POSCAR
-CLAMM_MC uses a POSCAR-like file to define the simulation cell. The only differnece between CLAMM and VASP POSCAR files lies in the implementation of sub-lattice information. In order to define any sub-lattices CLAMM_MC requires that each set of atomic coordinates is followed by the atomic spieces that are allowed to occupy that, or an equivilant site.
+CLAMM_MC uses a POSCAR-like file to define the simulation cell. The only difference between CLAMM and VASP POSCAR files lies in the implementation of sub-lattice information. In order to define any sub-lattices, CLAMM_MC requires that each set of atomic coordinates is followed by the atomic species that are allowed to occupy that site, or an equivalent site.
 ```text
 Ni2MnIn
 1.0
@@ -83,7 +83,7 @@ Direct
 ```
 
 ### Write an INPUT File
-The INPUT file is where the user defines all simulation specific paramiters. An example INPUT file is shown below:
+The INPUT file is where the user defines all simulation-specific parameters. An example INPUT file is shown below:
 ```text
 ALGO = 3
 STRUCTURE = POSCAR
@@ -142,12 +142,12 @@ Options for the ALGO Flag:
 ```
 
 ### Step 2: Run the Simulation
-Yep. Just two steps. Its just that easy. Run the simulation with:
+Yep. Just two steps. It's just that easy. Run the simulation with:
 ```bash
 ./CLAMM_MC
 ```
 
-The as the simulation runs, it will create the following output files:
+As the simulation runs, it will create the following output files:
 - `OUTPUT` — thermodynamic data (energy, magnetization, heat capacity, etc.)
 - (optional) `CONTCAR_xxx` files if enabled
 
@@ -161,7 +161,7 @@ The as the simulation runs, it will create the following output files:
 | `INPUT`      | Main simulation parameters                                        |
 | `CLUSTERS`   | Fitted cluster model parameters                                   |
 | `SPIN_STATES`| Allowed spin states per element                                   |
-| `OUTPUT`     | Simulation order paramiters and thermodynamic results             |
+| `OUTPUT`     | Simulation order parameters and thermodynamic results             |
 | `OUTPUT_SRO` | Short-range order parameter results (optional)                    |
 | `CONTCAR_*`  | Snapshot of simulation configurations                             |
 
