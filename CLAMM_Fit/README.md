@@ -26,7 +26,7 @@ This package is part of the larger CLAMM framework:
 ---
 
 ## Installation
-1. If you have not already colned the CLAMM repository do so with:
+1. If you have not already cloned the CLAMM repository, do so with:
    ```bash
    git clone <repository_url>
    ```
@@ -55,7 +55,7 @@ do_count: false  # Count clusters (set to true if counts are not precomputed)
 ```
 
 ### 2. **Cluster Definition File (`cluster_in.json`)**
-This file defines the motifs and types of clusters to be analyzed. An a simple cluster_in file could look like this:
+This file defines the motifs and types of clusters to be analyzed. A simple cluster_in file could look like this:
 
 ```json
 {
@@ -110,7 +110,7 @@ Clusters are specified in the `cluster_in.json` file using the following format:
 
 ## Outputs
 1. **`CLUSTERS` File**: Contains the parameterized lattice model.
-2. **Cluster Counts**: Written to `count_out` if `do_count` is enabled. Counting clusters for each DFT simulation is the most time consuming step in CLAMM_Fit. The `count_out` file saves a version of counted clusters for each simulation which can be loaded when trying diffrent regression methods on the same set of clusters. It is highly recomended to 
+2. **Cluster Counts**: Written to `count_out` if `do_count` is enabled. Counting clusters for each DFT simulation is the most time-consuming step in CLAMM_Fit. The `count_out` file saves a version of counted clusters for each simulation, which can be loaded when trying different regression methods on the same set of clusters. It is highly recommended to 
 
 ---
 
@@ -120,7 +120,7 @@ First, navigate to the CLAMM_Fit directory:
 ```bash
 cd ./CLAMM_Fit
 ```
-Then update the `param_in` file as needed. (For this example, no updates are nessisary):
+Then update the `param_in` file as needed. (For this example, no updates are necessary):
 ```yaml
 # main
 do_count: True                          # define whether to count or not
