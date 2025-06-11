@@ -25,7 +25,7 @@ This package is part of the larger CLAMM framework:
 
 The general workflow for using CLAMM_Prep involves the following steps:
 1. Create a dataset from DFT simulations. 
-    - Any model created with CLAMM is only as good as its dataset. In order to ensure the best possible mode, the dataset should include a diverse set of atomic and magnetic configurations. It is recommended that, for each unique POSCAR file in a dataset should be initialized with as many symmetrically unique configurations of magnetic moments as is practical.
+    - Any model created with CLAMM is only as good as its dataset. In order to ensure the best possible mode, the dataset should include a diverse set of atomic and magnetic configurations. It is recommended that each unique POSCAR file in a dataset should be initialized with as many symmetrically unique configurations of magnetic moments as is practical.
 
     - The directory structure of the dataset should be organized as follows:
 ```plaintext
@@ -48,7 +48,7 @@ The general workflow for using CLAMM_Prep involves the following steps:
 		|...
    ```
    Each simulation results folder MUST contain at least a POSCAR, CONTCAR, and OUTCAR file. 
-   Any additional VASP input or output files are welcome to remain in the folder but will be ignored. 
+   Any additional VASP input or output files are welcome to remain in the folder, but will be ignored. 
 	
 2. Format the "param_in" file.
    - An example "param_in" file is shown below:
@@ -59,29 +59,29 @@ The general workflow for using CLAMM_Prep involves the following steps:
 	write_data: 'data_mag'                            # Path and name of your output dataset file
 	species: ['Ni', 'Mn', 'In']                       # Species in sequence as they appear in your POSCAR file
 	read_mag: True                                    # Flag to read magnetic moment from OUTCAR
-	use_spin_tol: True                                # Choose whether display spin as integers or total magnetic moment
+	use_spin_tol: True                                # Choose whether to display spin as integers or total magnetic moment
 	spin_tol: [[0.2] , [3.0 , 2.0] , [ -1]]           # Spin tolerance here in the same sequence of species
 	do_mag_distrib: True                              # Choose whether or not to calculate magnetic moment distribution
 	write_mag_distrib: 'mag_distrib'                  # Path and name of your magnetic distribution output file
 	```
    - The "spin_tol" option requires additional explanation. When the "use_spin_tol" flag is set to “True”, a spin tolerance method is used. In this case, magnetic moments read from the OUTCAR file are assigned integer 
-     values such as −1, 0, 1 or −1, 1. The mapping between the OUTCAR moments and the integer values and is provided by "spin_tol" using a tolarance vector. Each element in the vector represents how the tolarance is 
-     applied to the corisponding atomic species. In the example "param_in" file, the tolarance vector indicates that there are two allowable spin magnitudes for Ni atoms:
-     - If ∥OUTCAR moment∥ > 0.2 then ∥spin∥ is set to 1 and its sign is set to sgn(OUTCAR moment)
-     - Otherwise ∥spin∥ is set to 0
+     values such as −1, 0, 1, or −1, 1. The mapping between the OUTCAR moments and the integer values is provided by "spin_tol" using a tolerance vector. Each element in the vector represents how the tolerance is 
+     applied to the corresponding atomic species. In the example "param_in" file, the tolerance vector indicates that there are two allowable spin magnitudes for Ni atoms:
+     - If ∥OUTCAR moment∥ > 0.2, then ∥spin∥ is set to 1 and its sign is set to sgn(OUTCAR moment)
+     - Otherwise, ∥spin∥ is set to 0
       
      The second element in the vector indicates that there are three allowable magnitudes for spins assigned to Mn atoms:
-     - If ∥OUTCAR moment∥ > 3.0 then ∥spin∥ is set to 2 and its sign is set to sgn(OUTCAR moment)
-     - If ∥OUTCAR moment∥ < 3.0 and > 2.0 then ∥spin∥ is set to 1 and its sign is set to sgn(OUTCAR moment)
-     - Otherwise ∥spin∥ is set to 0.
+     - If ∥OUTCAR moment∥ > 3.0, then ∥spin∥ is set to 2 and its sign is set to sgn(OUTCAR moment)
+     - If ∥OUTCAR moment∥ < 3.0 and > 2.0, then ∥spin∥ is set to 1 and its sign is set to sgn(OUTCAR moment)
+     - Otherwise, ∥spin∥ is set to 0.
     
-     For the third element in the vector a special value is used, -1. This indicates that, for all atoms of this type (in this case In) all spins are set to 0.0.
+     For the third element in the vector, a special value is used, -1. This indicates that, for all atoms of this type (in this case, In), all spins are set to 0.0.
 
      __Choosing the Spin Tolerance__
      It is important to carefully choose the "spin_tol" values in order to achieve a suitable model. If the "do_mag_distrib" flag is set to "True", CLAMM_Prep will return the magnetic moments of each atom organized by atomic species. This data can be plotted as a histogram to view the distribution of magnetic moments. It is recommended that the chosen tolerance vector reflect the moment distribution in order to achieve the best model.
      
 
-3. Run the CLAMM_Prep Python script. This will creat a dataset file at the user defined location in a format that is readable by GenMC_Fit, the next tool in the CLAMM workflow. The dataset file should look something like this:
+3. Run the CLAMM_Prep Python script. This will create a dataset file at the user-defined location in a format that is readable by GenMC_Fit, the next tool in the CLAMM workflow. The dataset file should look something like this:
 
 		# Ni Mn In
 		8 4 4 \Ni2MnIn\Mart\B0 -88.5581 5.2 5.2 7.8 1.5708 1.5708 1.5708
@@ -105,7 +105,7 @@ The general workflow for using CLAMM_Prep involves the following steps:
 		14 2 0 0.0 0.0 0.5
 		15 2 0 0.5 0.5 0.5
 
-The first line lists the atomic species present in the dataset in the same order as in the POSCAR files. The second line lists the number of each atom of each species, the file path the data was found at, the DFT total energy in eV, and the lattice constants. The next three lines are the lattice vectors. The remaining lines show the atom index, spin/moment, and fractional coordinates of each atom. 
+The first line lists the atomic species present in the dataset in the same order as in the POSCAR files. The second line lists the number of each atom of each species, the file path where the data was found, the DFT total energy in eV, and the lattice constants. The next three lines are the lattice vectors. The remaining lines show the atom index, spin/moment, and fractional coordinates of each atom. 
 
 ## Example Files
 Feel Free to try and run CLAMM_Prep on the included sample data for NiMnIn. 
