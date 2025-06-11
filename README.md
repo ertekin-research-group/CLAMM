@@ -1,5 +1,5 @@
 ![title](media/Clamm1.png)
-# Wellcome to CLAMM: A Cluster Expansion and Monte Carlo toolkit for Alloys and Magnetic Materials 
+# Welcome to CLAMM: A Cluster Expansion and Monte Carlo toolkit for Alloys and Magnetic Materials 
 
 **CLAMM** is an open-source software suite for simulating thermodynamic, magnetic, and structural properties of complex alloys and magnetic materials using lattice models informed by DFT data. It provides tools for data preparation, model fitting, and Monte Carlo simulation through its three main components:
 
@@ -17,34 +17,34 @@
 ---
 
 ## 📦 Project Structure
-The CLAMM repository is devided into seperate folders for each tool
+The CLAMM repository is divided into separate folders for each tool
 ```
 CLAMM/
 ├── CLAMM_Prep/         # CLAMM Prep (Python)
 ├── CLAMM_Fit/          # CLAMM Fit (Python)
 ├── CLAMM_MC/           # CLAMM MC (C++)
 ```
-In addition to the code, each folder contains all sample files needed for running a short tutorial. Detailed can be found in the files README.
+In addition to the code, each folder contains all the sample files needed for running a short tutorial. Detailed information can be found in the README.
 
 ---
 
 ## 🔧 Installation Instructions
 
 ### Python Tools (Prep and Fit)
-To install all python dependencies, navigate to the main CLAMM directory and run:
+To install all Python dependencies, navigate to the main CLAMM directory and run:
 ```bash
 pip install -r requirements.txt
 ```
 
 ### C++ Tool (CLAMM_MC)
-To build the c++ code nessisary to perform Monte Carlo simulations, navigate to the main CLAMM directory and run: 
+To build the C++ code necessary to perform Monte Carlo simulations, navigate to the main CLAMM directory and run: 
 ```bash
 cd CLAMM_MC
 mkdir build && cd build
 cmake ..
 make
 ```
-This will generates a `CLAMM_MC` executable in the `build` directory.
+This will generate a `CLAMM_MC` executable in the `build` directory.
 ---
 
 ## 🚀 Example Workflow
@@ -80,9 +80,9 @@ We welcome contributions! If you would like to add new algorithms, improve perfo
 Each module has detailed documentation and examples:
 - `CLAMM_Prep/README.md` – DFT data parsing and formatting
 - `CLAMM_Fit/README.md` – Model definition and fitting
-- `CLAMM_MC/README.md` – Lattice Model initalization and Monte Carlo simulation
-A detailed explenation of all CLAMM tools can be found at ... (the link to the paper when published)
-Mention NiFeCr paper and NiMnIn paper
+- `CLAMM_MC/README.md` – Lattice Model initialization and Monte Carlo simulation
+A detailed explanation of all CLAMM tools can be found at ... (the link to the paper when published)
+Mention the FeNiCr paper (Acta Materialia 276 (2024): 120088) and NiMnIn paper (TBD)
 ---
 
 ## 🔗 Repository
