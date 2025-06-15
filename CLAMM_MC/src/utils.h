@@ -9,6 +9,8 @@
 #include <algorithm>
 #include <iterator>
 #include <sstream>
+#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
 
 int openWithFcntl(const char* filename);
