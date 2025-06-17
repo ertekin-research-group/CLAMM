@@ -14,9 +14,19 @@ def find_sym(lat_in):
     struct = Structure.from_file(lat_in)
     struct = syman.SpacegroupAnalyzer(struct).find_primitive()
     pmg_sym = symsite.get_site_symmetries(struct, 0.1)
-    f = open('sym_out', 'w+')
-    f.write(str(pmg_sym))
+    for i in range(len(pmg_sym)):
+        if set(pmg_sym[0]) - set(pmg_sym[i]) != set():
+            print("Multi-sublattice system of different symmetries is currently not supported!")
+            exit()
+        else:
+            continue
+    f = open('sym_out', 'a')
+    for j in range(len(pmg_sym[0])):
+        f.write(str(pmg_sym[0][j]))
     f.close()
+    # f = open('sym_out', 'w+')
+    # f.write(str(pmg_sym))
+    # f.close()
     lines = open('sym_out', 'r').read().split('\n')
     sym_list = []
     for i in range(len(lines)):
