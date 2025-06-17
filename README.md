@@ -43,8 +43,7 @@ cd CLAMM_MC
 mkdir build && cd build
 cmake ..
 make
-```
-This will generate a `CLAMM_MC` executable in the `build` directory.
+```  This will generate a `CLAMM_MC` executable in the `build` directory.
 ---
 
 ## 🚀 Example Workflow
@@ -81,10 +80,9 @@ Each module has detailed documentation and examples:
 - `CLAMM_Prep/README.md` – DFT data parsing and formatting
 - `CLAMM_Fit/README.md` – Model definition and fitting
 - `CLAMM_MC/README.md` – Lattice Model initialization and Monte Carlo simulation
-A detailed explanation of all CLAMM tools can be found at ... (the link to the paper when published)
-Mention the FeNiCr paper (Acta Materialia 276 (2024): 120088) and NiMnIn paper (TBD)
-
-A simple tutorial can be found on Colab https://colab.research.google.com/drive/1UhURqhrxokx1FasEfXXOUd_Hu4PLQtmr?usp=sharing
+A detailed explanation of all CLAMM tools can be found at ... (the link to the paper when published).
+Mention the FeNiCr paper (Acta Materialia 276 (2024): 120088) and NiMnIn paper (TBD).
+A simple tutorial can be found on [Colab](https://colab.research.google.com/drive/1UhURqhrxokx1FasEfXXOUd_Hu4PLQtmr?usp=sharing)
 ---
 
 ## 🔗 Repository
